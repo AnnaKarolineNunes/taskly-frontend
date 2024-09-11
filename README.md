@@ -6,7 +6,7 @@ O Taskly Ã© um sistema de gerenciamento de tarefas desenvolvido como uma aplicaÃ
 
 ## Capturas de Tela
 
-![Tela Cadastro](/frontend/public/assets/Telas/TelaTarefaslGeral.png)
+![Tela Cadastro](/public/assets/Telas/TelaTarefaslGeral.png)
 
 ### Confira essa e outras telas do sistema nesse [link](/frontend/public/assets/Telas/) 
 
