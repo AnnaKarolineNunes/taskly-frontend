@@ -4,7 +4,7 @@ O Taskly é um sistema de gerenciamento de tarefas desenvolvido como uma aplica�
 
 ### [Clique aqui ](https://taskly-gerenciador.netlify.app/) para visitar o site da Taskly . 
 
-### Para acessar o repositório do frontend da aplicação, [clique aqui](https://github.com/AnnaKarolineNunes/to-do-list-teste-tecnico) .
+### Para acessar o repositório do backend da aplicação, [clique aqui](https://github.com/AnnaKarolineNunes/to-do-list-teste-tecnico) .
 
 ## Capturas de Tela
 
