@@ -13,15 +13,16 @@ function AddTaskModal({ onClose, onSave }) {
     const [createdAt, setCreatedAt] = useState(getLocalDateTime()); // Data de criação da tarefa
 
     const handleSave = () => {
-        console.log("Data enviada para o backend:", createdAt);  // Verifique como está a data enviada
+        const utcDate = new Date(createdAt).toISOString();
+        console.log("Data enviada para o backend (UTC):", utcDate);
         if (title && description && createdAt) {
-            // Não ajusta o fuso horário, apenas envia o valor diretamente
-            onSave({ title, description, completed: false, createdAt });
+            onSave({ title, description, completed: false, createdAt: utcDate });
             onClose();
         } else {
             alert("Preencha todos os campos");
         }
     };
+
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
