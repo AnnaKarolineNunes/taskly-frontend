@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 
 function AddTaskModal({ onClose, onSave }) {
     // Inicializa a data local, não em UTC
-    const getLocalDate = () => {
+    const getLocalDateTime = () => {
         const now = new Date();
-        now.setMinutes(now.getMinutes() - now.getTimezoneOffset()); // Ajusta pelo fuso horário local
-        return now.toISOString().split('T')[0];
+        const localISOTime = new Date(now.getTime() - (now.getTimezoneOffset() * 60000)).toISOString().slice(0, 16); // Remove o fuso horário
+        return localISOTime;
     };
 
     const [title, setTitle] = useState(''); // Título da tarefa
     const [description, setDescription] = useState(''); // Descrição da tarefa
-    const [createdAt, setCreatedAt] = useState(getLocalDate()); // Data de criação da tarefa
+    const [createdAt, setCreatedAt] = useState(getLocalDateTime()); // Data de criação da tarefa
 
     const handleSave = () => {
         console.log("Data enviada para o backend:", createdAt);  // Verifique como está a data enviada
         if (title && description && createdAt) {
+            // Não ajusta o fuso horário, apenas envia o valor diretamente
             onSave({ title, description, completed: false, createdAt });
             onClose();
         } else {
             alert("Preencha todos os campos");
         }
     };
-
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
